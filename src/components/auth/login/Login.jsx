@@ -4,6 +4,8 @@ import discordLogo from "../../../assets/imgs/brands/discord.png";
 import googleLogo from "../../../assets/imgs/brands/google.png";
 import { Checkbox } from "@material-tailwind/react";
 import { Link } from "react-router-dom";
+import { Input } from "@material-tailwind/react";
+
 export default function Login() {
   return (
     <div className="bg-[#bad8f4] w-screen h-screen flex items-center justify-center">
@@ -54,14 +56,14 @@ export default function Login() {
           onSubmit={(e) => e.preventDefault()}
           className="flex flex-col gap-6 px-3 sm:px-4"
         >
-          <input
+          <Input
             type="email"
-            placeholder="Enter your email"
+            label="EMAIL ADDRESS"
             className="border py-2 px-3 rounded-lg"
           />
-          <input
+          <Input
             type="password"
-            placeholder="Enter password"
+            label="PASSWORD"
             className="border py-2 px-3 rounded-lg"
           />
           <div className="flex flex-wrap items-center justify-between gap-2">
@@ -81,7 +83,7 @@ export default function Login() {
         <div className="text-center mt-3">
           <h3 className="text-[#585858] font-medium">
             New to Flexy? {""}
-            <Link className="text-blue-500 text-sm font-normal"> 
+            <Link className="text-blue-500 text-sm font-normal">
               Create an account
             </Link>
           </h3>
