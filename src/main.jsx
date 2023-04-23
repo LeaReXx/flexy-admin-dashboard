@@ -7,8 +7,9 @@ import { ThemeProvider } from "@material-tailwind/react";
 import "./index.css";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fab } from "@fortawesome/free-brands-svg-icons";
-
-library.add(fab);
+import { far } from "@fortawesome/free-regular-svg-icons";
+import Register from "./components/auth/register/register";
+library.add(fab, far);
 const router = createBrowserRouter([
   {
     path: "/",
@@ -17,6 +18,10 @@ const router = createBrowserRouter([
   {
     path: "/login",
     element: <Login />,
+  },
+  {
+    path: "/register",
+    element: <Register />,
   },
 ]);
 ReactDOM.createRoot(document.getElementById("root")).render(
