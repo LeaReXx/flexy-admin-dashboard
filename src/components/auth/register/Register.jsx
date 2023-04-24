@@ -30,17 +30,6 @@ export default function Register() {
       console.log(data);
     }
   }, [data]);
-  // console.log(data, loading, error);
-  // const { data, error } = await supabase.auth.admin.createUser({
-  //   email: "petrol_cs@yahoo.com",
-  //   password: "123456789",
-  //   data: { name: "Sepehr" },
-  // });
-  // console.log(data, error);
-  // const { data, error } = await supabase.auth.signInWithPassword({
-  //   email,
-  //   password,
-  // });
   return (
     <div className="bg-[#bad8f4] w-screen h-screen flex items-center justify-center">
       <div className="bg-[#fff] w-[90%] max-w-[450px] rounded-xl py-4 px-3 sm:px-8">
