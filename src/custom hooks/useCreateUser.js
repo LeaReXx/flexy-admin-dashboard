@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { supabase } from "../supabaseClient";
+import addNotifToDom from "../components/notifications/Notifications.jsx";
+
 const useCreateUser = () => {
   const [data, setData] = useState(null); // set data
   const [loading, setLoading] = useState(false); // set loading
@@ -16,9 +18,13 @@ const useCreateUser = () => {
 
     if (error) {
       setRegisterError(true);
+      console.log(error);
+      addNotifToDom("Problem with the server!, Try later", "error");
     } else {
+      addNotifToDom("Registration was successful", "success");
       setRegisterError(false);
       setData(data);
+      console.log(data);
     }
     setLoading(false);
   };
