@@ -7,7 +7,7 @@ const useCreateUser = () => {
   const [loading, setLoading] = useState(false); // set loading
   const [registerError, setRegisterError] = useState(null); // set error
 
-  const connectToSupabase = async (email, password, userName) => {
+  const registerToSupabase = async (email, password, userName) => {
     setLoading(true);
 
     const { data, error } = await supabase.auth.admin.createUser({
@@ -40,7 +40,7 @@ const useCreateUser = () => {
     }
     setLoading(false);
   };
-  return [data, loading, registerError, connectToSupabase];
+  return [data, loading, registerError, registerToSupabase];
 };
 
 export default useCreateUser;

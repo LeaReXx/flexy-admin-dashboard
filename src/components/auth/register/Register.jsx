@@ -12,9 +12,9 @@ export default function Register() {
   const [userName, setUserName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [data, loading, registerError, connectToSupabase] = useCreateUser();
+  const [data, loading, registerError, registerToSupabase] = useCreateUser();
   const createUser = () => {
-    connectToSupabase(email, password, userName);
+    registerToSupabase(email, password, userName);
   };
 
   useEffect(() => {
