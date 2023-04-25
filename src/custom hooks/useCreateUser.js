@@ -17,9 +17,21 @@ const useCreateUser = () => {
     });
 
     if (error) {
-      setRegisterError(true);
-      console.log(error);
-      addNotifToDom("Problem with the server!, Try later", "error");
+      if (
+        error.message ===
+        "A user with this email address has already been registered"
+      ) {
+        setRegisterError(true);
+        console.log(error.message);
+        addNotifToDom(
+          "this email address has already been registered",
+          "warning"
+        );
+      } else {
+        setRegisterError(true);
+        addNotifToDom("Problem with the server!, Try later", "error");
+      }
+      
     } else {
       addNotifToDom("Registration was successful", "success");
       setRegisterError(false);
