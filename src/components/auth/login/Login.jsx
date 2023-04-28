@@ -1,21 +1,38 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import logo from "../../../assets/imgs/logo.svg";
 import discordLogo from "../../../assets/imgs/brands/discord.png";
 import googleLogo from "../../../assets/imgs/brands/google.png";
 import { Checkbox } from "@material-tailwind/react";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import { Input } from "@material-tailwind/react";
 import useLoginUser from "../../../custom hooks/useLoginUser";
+import useAuth from "../../../custom hooks/useAuth";
 export default function Login() {
   const [email, setEmail] = useState(null);
   const [password, setPassword] = useState(null);
   const [remember, setRemember] = useState(false);
   const [loading, loginToSupabase] = useLoginUser();
+  const [authorizationUser, siteUser] = useAuth();
   const loginUser = () => {
     loginToSupabase(email, password);
+    authorizationUser();
   };
+
+  useEffect(() => {
+    authorizationUser();
+  }, []);
+
+  useEffect(() => {
+    if (siteUser) {
+      console.log("you are logged in");
+    } else {
+      console.log("not logged in");
+    }
+  }, [siteUser]);
+
   return (
     <div className="bg-[#bad8f4] w-screen h-screen flex items-center justify-center">
+      {siteUser && <Navigate to="/dashboard" />}
       <div className="bg-[#fff] w-[90%] max-w-[450px] rounded-xl py-4 px-3 sm:px-8">
         <div>
           <img src={logo} alt="logo" className="mx-auto" />

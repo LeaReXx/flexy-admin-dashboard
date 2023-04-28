@@ -7,15 +7,28 @@ import { Link, Navigate } from "react-router-dom";
 import { Input } from "@material-tailwind/react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import useCreateUser from "../../../custom hooks/useCreateUser";
+import useAuth from "../../../custom hooks/useAuth";
 export default function Register() {
   const [showPassword, setShowPassword] = useState(false);
   const [userName, setUserName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [authorizationUser, siteUser] = useAuth();
   const [data, loading, registerError, registerToSupabase] = useCreateUser();
   const createUser = () => {
     registerToSupabase(email, password, userName);
   };
+  useEffect(() => {
+    authorizationUser();
+  }, []);
+
+  useEffect(() => {
+    if (siteUser) {
+      console.log("you are logged in");
+    } else {
+      console.log("not logged in");
+    }
+  }, [siteUser]);
 
   useEffect(() => {
     if (!registerError) {
@@ -33,6 +46,7 @@ export default function Register() {
   return (
     <>
       <div className="bg-[#bad8f4] w-screen h-screen flex items-center justify-center">
+        {siteUser && <Navigate to="/dashboard" />}
         {data && <Navigate to="/login" replace />}
         <div className="bg-[#fff] w-[90%] max-w-[450px] rounded-xl py-4 px-3 sm:px-8">
           <div>
