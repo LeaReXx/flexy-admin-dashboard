@@ -23,14 +23,6 @@ export default function Register() {
   }, []);
 
   useEffect(() => {
-    if (siteUser) {
-      console.log("you are logged in");
-    } else {
-      console.log("not logged in");
-    }
-  }, [siteUser]);
-
-  useEffect(() => {
     if (!registerError) {
       setUserName("");
       setEmail("");

@@ -7,14 +7,6 @@ export default function Home() {
     authorizationUser();
   }, []);
 
-  useEffect(() => {
-    if (siteUser) {
-      console.log("you are logged in");
-    } else {
-      console.log("not logged in");
-    }
-  }, [siteUser]);
-
   return (
     <>
       {siteUser ? (
