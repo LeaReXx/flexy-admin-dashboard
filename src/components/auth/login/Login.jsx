@@ -10,7 +10,7 @@ import useAuth from "../../../custom hooks/useAuth";
 export default function Login() {
   const [email, setEmail] = useState(null);
   const [password, setPassword] = useState(null);
-  const [remember, setRemember] = useState(false);
+  const [remember, setRemember] = useState(true);
   const [loading, loginToSupabase] = useLoginUser();
   const [authorizationUser, siteUser] = useAuth();
   const loginUser = () => {
@@ -101,7 +101,7 @@ export default function Login() {
           />
           <div className="flex flex-wrap items-center justify-between gap-2">
             <div className="font-normal">
-              <Checkbox label="Remember this device" />
+              <Checkbox label="Remember this device" checked={remember}/>
             </div>
             <div className="text-sm text-blue-500 pl-3 font-medium">
               <Link>Forgot Password ?</Link>
