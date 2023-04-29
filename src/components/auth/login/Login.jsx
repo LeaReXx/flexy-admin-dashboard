@@ -15,13 +15,12 @@ export default function Login() {
   const [authorizationUser, siteUser] = useAuth();
   const loginUser = () => {
     loginToSupabase(email, password);
-    authorizationUser();
   };
 
   useEffect(() => {
     authorizationUser();
   }, []);
-
+  
   return (
     <div className="bg-[#bad8f4] w-screen h-screen flex items-center justify-center">
       {siteUser && <Navigate to="/dashboard" />}

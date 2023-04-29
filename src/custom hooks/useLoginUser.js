@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { supabase } from "../supabaseClient";
 import addNotifToDom from "../components/notifications/Notifications.jsx";
+import { Navigate, redirect } from "react-router-dom";
 
 const useLoginUser = () => {
   const [user, setUser] = useState(null);
@@ -14,6 +15,7 @@ const useLoginUser = () => {
     });
     if (data.user) {
       addNotifToDom("You have successfully logged in", "success");
+      return redirect('/dashboard')
     } else {
       addNotifToDom("email or password is incorrect", "error");
     }
