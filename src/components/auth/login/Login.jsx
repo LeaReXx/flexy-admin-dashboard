@@ -20,7 +20,7 @@ export default function Login() {
   useEffect(() => {
     authorizationUser();
   }, []);
-  
+
   return (
     <div className="bg-[#bad8f4] w-screen h-screen flex items-center justify-center">
       {siteUser && <Navigate to="/dashboard" />}
@@ -92,7 +92,11 @@ export default function Login() {
           />
           <div className="flex flex-wrap items-center justify-between gap-2">
             <div className="font-normal">
-              <Checkbox label="Remember this device" checked={remember}/>
+              <Checkbox
+                label="Remember this device"
+                checked={remember}
+                onChange={(e) => setRemember(e.target.checked)}
+              />
             </div>
             <div className="text-sm text-blue-500 pl-3 font-medium">
               <Link>Forgot Password ?</Link>
