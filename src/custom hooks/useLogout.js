@@ -8,8 +8,7 @@ const useLogout = () => {
     const { error } = await supabase.auth.signOut();
     if (!error) {
       addNotifToDom("You are logged out", "success");
-
-      location.reload();
+      navigate("/");
     } else {
       addNotifToDom("something went wrong, please try again", "error");
     }
