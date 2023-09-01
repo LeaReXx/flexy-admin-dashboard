@@ -1,7 +1,7 @@
 import Login from "./components/auth/login/login";
-import Home from "./components/home/Home";
+import Home from "./pages/home/Home";
 import Register from "./components/auth/register/register";
-import Dashboard from "./components/dashboard/Dashboard";
+import Dashboard from "./pages/dashboard/Dashboard";
 
 const routes = [
   {
