@@ -1,45 +1,23 @@
 import React, { useEffect, useState } from "react";
-import logo from "../../../assets/imgs/logo.svg";
-import discordLogo from "../../../assets/imgs/brands/discord.png";
-import googleLogo from "../../../assets/imgs/brands/google.png";
+import logo from "../../assets/imgs/logo.svg";
+import discordLogo from "../../assets/imgs/brands/discord.png";
+import googleLogo from "../../assets/imgs/brands/google.png";
 import { Checkbox } from "@material-tailwind/react";
-import { Link, Navigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Input } from "@material-tailwind/react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import useCreateUser from "../../../custom hooks/useCreateUser";
-import useAuth from "../../../custom hooks/useAuth";
+import { useAuth } from "../../context/AuthContext";
 export default function Register() {
   const [showPassword, setShowPassword] = useState(false);
-  const [userName, setUserName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [authorizationUser, siteUser] = useAuth();
-  const [data, loading, registerError, registerToSupabase] = useCreateUser();
-  const createUser = () => {
-    registerToSupabase(email, password, userName);
-  };
-  useEffect(() => {
-    authorizationUser();
-  }, []);
+  const [userName, setUserName] = useState("");
+  const { registerUser, loading } = useAuth();
 
-  useEffect(() => {
-    if (!registerError) {
-      setUserName("");
-      setEmail("");
-      setPassword("");
-    }
-  }, [registerError]);
-
-  useEffect(() => {
-    if (data) {
-      console.log(data);
-    }
-  }, [data]);
+  const createUser = () => registerUser(email, password, userName);
   return (
     <>
       <div className="bg-[#bad8f4] w-screen h-screen flex items-center justify-center">
-        {siteUser && <Navigate to="/dashboard" />}
-        {data && <Navigate to="/login" replace />}
         <div className="bg-[#fff] w-[90%] max-w-[450px] rounded-xl py-4 px-3 sm:px-8">
           <div>
             <img src={logo} alt="logo" className="mx-auto" />

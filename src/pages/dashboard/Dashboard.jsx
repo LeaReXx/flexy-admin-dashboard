@@ -6,9 +6,14 @@ import { Navigate } from "react-router-dom";
 export default function Dashboard() {
   const authContext = useContext(AuthContext);
 
+
+  useEffect(()=>{
+      console.log(authContext.isLoggedIn)
+  },[])
   return authContext.isLoggedIn ? (
     <div className="flex justify-between p-5">
       <div>
+
         <img src={logo} alt="Logo" />
       </div>
       <button
@@ -19,6 +24,9 @@ export default function Dashboard() {
       </button>
     </div>
   ) : (
+    <>
+            {console.log(authContext)}
     <Navigate to="/" />
+    </>
   );
 }

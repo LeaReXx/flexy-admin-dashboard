@@ -1,7 +1,6 @@
 import "./App.css";
 import { ThemeProvider } from "@material-tailwind/react";
-import { useRoutes } from "react-router-dom";
-import AuthContext from "./context/AuthContext";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fab } from "@fortawesome/free-brands-svg-icons";
 import { far } from "@fortawesome/free-regular-svg-icons";
@@ -9,58 +8,29 @@ import { fas } from "@fortawesome/free-solid-svg-icons";
 import "react-toastify/dist/ReactToastify.css";
 library.add(fab, fas, far);
 import { ToastContainer } from "react-toastify";
-import routes from "./routes";
-import { useEffect, useState } from "react";
-import { supabase } from "./supabaseClient";
-import Loading from "./components/loading/Loading";
-import addNotifToDom from "./components/notifications/Notifications";
-import { useNavigate } from "react-router-dom";
+import PrivateRoutes from "./components/private routes/PrivateRoutes";
+import Login from "./pages/login/Login";
+import Register from "./pages/register/Register";
+import Dashboard from "./pages/dashboard/Dashboard";
+import Home from "./pages/home/Home";
+import { AuthProvider } from "./context/AuthContext";
 function App() {
-  const router = useRoutes(routes);
-  const navigate = useNavigate();
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [userInfos, setUserInfos] = useState([]);
-  const [pageLoading, setPageLoading] = useState(true);
-
-  const logOut = () => {
-    async function logOutUser() {
-      const { error } = await supabase.auth.signOut();
-      if (!error) {
-        setIsLoggedIn(false);
-        addNotifToDom("You are logged out", "success");
-        navigate("/");
-      } else {
-        addNotifToDom("something went wrong, please try again", "error");
-      }
-    }
-    logOutUser();
-  };
-
-  useEffect(() => {
-    async function getMe() {
-      const { data } = await supabase.auth.getUser();
-      if (data.user) {
-        setUserInfos(data.user);
-        setIsLoggedIn(true);
-      }
-      setPageLoading(false);
-    }
-    getMe();
-  }, [isLoggedIn]);
   return (
-    <>
-      <AuthContext.Provider
-        value={{
-          isLoggedIn,
-          userInfos,
-          logOut,
-        }}
-      >
+    <Router>
+      <AuthProvider>
         <ToastContainer />
-        <Loading isActive={pageLoading} />
-        <ThemeProvider>{router}</ThemeProvider>
-      </AuthContext.Provider>
-    </>
+        <ThemeProvider>
+          <Routes>
+            <Route path="/" element={<Home />} index />
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+            <Route element={<PrivateRoutes />}>
+              <Route path="/dashboard" element={<Dashboard />} />
+            </Route>
+          </Routes>
+        </ThemeProvider>
+      </AuthProvider>
+    </Router>
   );
 }
 

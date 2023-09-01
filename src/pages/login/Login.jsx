@@ -1,29 +1,20 @@
-import React, { useEffect, useState } from "react";
-import logo from "../../../assets/imgs/logo.svg";
-import discordLogo from "../../../assets/imgs/brands/discord.png";
-import googleLogo from "../../../assets/imgs/brands/google.png";
+import React, { useState } from "react";
+import logo from "../../assets/imgs/logo.svg";
+import discordLogo from "../../assets/imgs/brands/discord.png";
+import googleLogo from "../../assets/imgs/brands/google.png";
 import { Checkbox } from "@material-tailwind/react";
-import { Link, Navigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Input } from "@material-tailwind/react";
-import useLoginUser from "../../../custom hooks/useLoginUser";
-import useAuth from "../../../custom hooks/useAuth";
+import { useAuth } from "../../context/AuthContext";
 export default function Login() {
-  const [email, setEmail] = useState(null);
-  const [password, setPassword] = useState(null);
-  const [remember, setRemember] = useState(true);
-  const [loading, loginToSupabase] = useLoginUser();
-  const [authorizationUser, siteUser] = useAuth();
-  const loginUser = () => {
-    loginToSupabase(email, password);
-  };
-
-  useEffect(() => {
-    authorizationUser();
-  }, []);
-
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [remember, setRemember] = useState(false);
+  const { userInfos, loginUser } = useAuth();
+  const loginFormOnSubmit = () => loginUser(email, password);
+  
   return (
     <div className="bg-[#bad8f4] w-screen h-screen flex items-center justify-center">
-      {siteUser && <Navigate to="/dashboard" />}
       <div className="bg-[#fff] w-[90%] max-w-[450px] rounded-xl py-4 px-3 sm:px-8">
         <div>
           <img src={logo} alt="logo" className="mx-auto" />
@@ -68,9 +59,9 @@ export default function Login() {
           <hr className="w-2/3 sm:w-full" />
         </div>
         <form
-          onSubmit={(e) => {
-            e.preventDefault();
-            loginUser();
+          onSubmit={(event) => {
+            event.preventDefault();
+            loginFormOnSubmit();
           }}
           className="flex flex-col gap-6 px-3 sm:px-4"
         >
@@ -80,7 +71,7 @@ export default function Login() {
             onChange={(e) => setEmail(e.target.value)}
             className="border py-2 px-3 rounded-lg"
             required
-            disabled={loading}
+            disabled={false}
           />
           <Input
             type="password"
@@ -88,7 +79,7 @@ export default function Login() {
             onChange={(e) => setPassword(e.target.value)}
             className="border py-2 px-3 rounded-lg"
             required
-            disabled={loading}
+            disabled={false}
           />
           <div className="flex flex-wrap items-center justify-between gap-2">
             <div className="font-normal">
@@ -107,7 +98,7 @@ export default function Login() {
             className="bg-[#4496F4] py-2 rounded-lg font-medium text-white hover:bg-[#529ff7] cursor-pointer flex justify-center gap-2 items-center"
           >
             Sign In
-            {loading && (
+            {false && (
               <svg
                 className="animate-spin -ml-1 mr-3 h-5 w-5 text-white"
                 xmlns="http://www.w3.org/2000/svg"
