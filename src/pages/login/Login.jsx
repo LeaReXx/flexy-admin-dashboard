@@ -10,7 +10,7 @@ export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [remember, setRemember] = useState(false);
-  const { userInfos, loginUser } = useAuth();
+  const { userInfos, loginUser,loading } = useAuth();
   const loginFormOnSubmit = () => loginUser(email, password);
   
   return (
@@ -71,7 +71,7 @@ export default function Login() {
             onChange={(e) => setEmail(e.target.value)}
             className="border py-2 px-3 rounded-lg"
             required
-            disabled={false}
+            disabled={loading}
           />
           <Input
             type="password"
@@ -79,7 +79,7 @@ export default function Login() {
             onChange={(e) => setPassword(e.target.value)}
             className="border py-2 px-3 rounded-lg"
             required
-            disabled={false}
+            disabled={loading}
           />
           <div className="flex flex-wrap items-center justify-between gap-2">
             <div className="font-normal">
@@ -98,7 +98,7 @@ export default function Login() {
             className="bg-[#4496F4] py-2 rounded-lg font-medium text-white hover:bg-[#529ff7] cursor-pointer flex justify-center gap-2 items-center"
           >
             Sign In
-            {false && (
+            {loading && (
               <svg
                 className="animate-spin -ml-1 mr-3 h-5 w-5 text-white"
                 xmlns="http://www.w3.org/2000/svg"
