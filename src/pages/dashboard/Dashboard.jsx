@@ -13,7 +13,7 @@ export default function Dashboard() {
   }, []);
 
   return (
-    <>
+    <div className="bg-[##F6F6F6]">
       <Navbar />
       <div className="flex justify-between p-5">
         <button
@@ -23,6 +23,6 @@ export default function Dashboard() {
           Log out
         </button>
       </div>
-    </>
+    </div>
   );
 }
