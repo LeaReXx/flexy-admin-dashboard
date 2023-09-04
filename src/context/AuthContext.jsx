@@ -2,13 +2,15 @@ import { createContext, useEffect, useState, useContext } from "react";
 import { supabase } from "../supabaseClient";
 import addNotifToDom from "../components/notifications/Notifications";
 import Loading from "../components/loading/Loading";
+import { useNavigate } from "react-router-dom";
 const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [userInfos, setUserInfos] = useState([]);
   const [loading, setLoading] = useState(true);
-
+  const [pageLoading, setPageLoading] = useState(true);
+  const navigate = useNavigate();
   const logOutUser = async () => {
     const { error } = await supabase.auth.signOut();
     if (!error) {
@@ -35,7 +37,7 @@ export const AuthProvider = ({ children }) => {
         setIsLoggedIn(true);
         setTimeout(() => {
           navigate("/dashboard");
-        }, 1000);
+        }, 2000);
       } else {
         addNotifToDom("email or password is incorrect", "error");
       }
@@ -45,13 +47,18 @@ export const AuthProvider = ({ children }) => {
 
   const registerUser = async (email, password, userName) => {
     setLoading(true);
-    const { data } = await supabase.auth.signUp({
+    const { data, error } = await supabase.auth.signUp({
       email,
       password,
       options: {
-        data: { name: userName },
+        data: {
+          name: userName,
+          avatar_url:
+            "https://vxxglnwztthbhyxxpdfq.supabase.co/storage/v1/object/sign/avatars/avatar_default.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJhdmF0YXJzL2F2YXRhcl9kZWZhdWx0LnBuZyIsImlhdCI6MTY5MzgxMjI2OSwiZXhwIjoxZSs1MH0.-InoCBWnmEjHd82OdMBy2EJmd3_C8lxrD0F3dyxoIlk&t=2023-09-04T07%3A24%3A30.111Z",
+        },
       },
     });
+    console.log(data, error);
     if (data) {
       if (data.user?.identities) {
         addNotifToDom("Registration was successful", "success");
@@ -74,11 +81,12 @@ export const AuthProvider = ({ children }) => {
       setUserInfos(data.user);
       setIsLoggedIn(true);
     }
+    setLoading(false);
   };
   useEffect(() => {
     checkUserStatus();
 
-    setTimeout(() => setLoading(false), 1000);
+    setTimeout(() => setPageLoading(false), 1000);
   }, [isLoggedIn]);
 
   const contextData = {
@@ -92,8 +100,8 @@ export const AuthProvider = ({ children }) => {
   return (
     <AuthContext.Provider value={contextData}>
       <>
-        <Loading isActive={loading} />
-        {!loading && children}
+        <Loading isActive={pageLoading} />
+        {!pageLoading && children}
       </>
     </AuthContext.Provider>
   );
