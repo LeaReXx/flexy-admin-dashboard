@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useAuth } from "../../context/AuthContext";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 const Navbar = () => {
-  const { userInfos } = useAuth();
+  const { userInfos, logOutUser } = useAuth();
   const [currentLang, setCurrentLang] = useState(
     "/src/assets/imgs/flags/uk_flag.png"
   );
@@ -132,7 +132,10 @@ const Navbar = () => {
                 />
               </div>
               <div className="mt-5">
-                <button className="border border-[#F3A48B] text-[#F3A48B] hover:text-white hover:bg-[#F3A48B] w-full rounded-md py-1">
+                <button
+                  className="border border-[#F3A48B] text-[#F3A48B] hover:text-white hover:bg-[#F3A48B] w-full rounded-md py-1"
+                  onClick={() => logOutUser()}
+                >
                   Logout
                 </button>
               </div>
