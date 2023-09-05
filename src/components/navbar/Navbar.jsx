@@ -9,12 +9,12 @@ const Navbar = () => {
   return (
     <nav>
       <div className="flex justify-between items-center p-4">
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-1 md:gap-6">
           <div className="w-10 h-10 hover:bg-gray-300 cursor-pointer flex justify-center items-center rounded-full xl:hidden">
             <FontAwesomeIcon icon="fa-solid fa-bars" className="text-2xl" />
           </div>
           <div>
-            <div className="relative w-[330px]">
+            <div className="relative w-[330px] hidden md:block">
               <input
                 type="text"
                 placeholder="Search somethings...:)"
