@@ -9,8 +9,35 @@ const Navbar = () => {
   return (
     <nav>
       <div className="flex justify-between items-center p-4">
-        <div className="w-10 h-10 hover:bg-gray-300 cursor-pointer flex justify-center items-center rounded-full">
-          <FontAwesomeIcon icon="fa-solid fa-bars" className="text-2xl" />
+        <div className="flex items-center gap-4">
+          <div className="w-10 h-10 hover:bg-gray-300 cursor-pointer flex justify-center items-center rounded-full xl:hidden">
+            <FontAwesomeIcon icon="fa-solid fa-bars" className="text-2xl" />
+          </div>
+          <div>
+            <div className="relative w-[330px]">
+              <input
+                type="text"
+                placeholder="Search somethings...:)"
+                className="w-full border rounded-xl px-3 py-2 outline-none placeholder:text-sm pr-12"
+              />
+              <span className="absolute top-1/2 -translate-y-1/2 right-2 bg-[#F3A48B] flex items-center justify-center p-2 rounded-full duration-200 text-white hover:bg-[#f87b55]">
+                <FontAwesomeIcon
+                  icon="fa-solid fa-search"
+                  className="text-xl  cursor-pointer"
+                />
+              </span>
+            </div>
+          </div>
+          <div className="w-10 h-10 group relative px-2 hover:bg-gray-300 cursor-pointer flex justify-center items-center rounded-full md:hidden">
+            <FontAwesomeIcon icon="fa-solid fa-search" className="text-xl" />
+            <div className="group-hover:translate-y-14 text-[#444444] z-20 translate-y-8 w-[320px] p-2 group-hover:opacity-100 opacity-0 group-hover:visible duration-200 origin-top-right invisible overflow-hidden absolute -left-12 sm:left-0 shadow-[rgba(99,99,99,0.2)_0px_2px_8px_0px] rounded-md">
+              <input
+                type="text"
+                placeholder="Search somethings...:)"
+                className="w-full border rounded-lg px-3 py-2 outline-none"
+              />
+            </div>
+          </div>
         </div>
         <div className="flex items-center">
           <div className="px-2">
