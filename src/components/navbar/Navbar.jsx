@@ -27,9 +27,100 @@ const Navbar = () => {
               />
             </div>
           </div>
-          <div className="px-2">
+          {/* Notifications */}
+          <div className="group relative px-2">
             <div className=" rounded-full hover:bg-gray-300 cursor-pointer w-10 h-10 flex justify-center items-center">
               <FontAwesomeIcon icon="fa-solid fa-bell" className="text-2xl" />
+            </div>
+            <div className="group-hover:translate-y-0 text-[#444444] z-20 translate-y-4 w-[340px] p-6 group-hover:opacity-100 opacity-0 group-hover:visible duration-200 origin-top-right invisible overflow-hidden absolute -right-12 sm:right-0 shadow-[rgba(99,99,99,0.2)_0px_2px_8px_0px] rounded-md">
+              <div className="flex justify-between items-center">
+                <span className="text-lg font-medium">Notifications</span>
+                <span className="text-white bg-[#F3A48B] text-xs rounded-full p-1">
+                  5 New
+                </span>
+              </div>
+              <div className="my-5 flex flex-col gap-3">
+                <div className="flex items-center gap-2">
+                  <div className="w-14">
+                    <img
+                      src="https://flexy-vue3-main-admin.vercel.app/assets/user-1-6d05e3ce.jpg"
+                      alt="Roman"
+                      className="w-full rounded-full"
+                    />
+                  </div>
+                  <div>
+                    <p className="text-sm font-bold">Roman Joined the Team!</p>
+                    <span className="text-sm text-[#585858]">
+                      Congratulate him
+                    </span>
+                  </div>
+                </div>
+                <div className="flex items-center gap-2">
+                  <div className="w-14">
+                    <img
+                      src="https://flexy-vue3-main-admin.vercel.app/assets/user-2-8a001bcb.jpg"
+                      alt="Roman"
+                      className="w-full rounded-full"
+                    />
+                  </div>
+                  <div>
+                    <p className="text-sm font-bold">New message received</p>
+                    <span className="text-sm text-[#585858]">
+                      Salma sent you new message
+                    </span>
+                  </div>
+                </div>
+                <div className="flex items-center gap-2">
+                  <div className="w-14">
+                    <img
+                      src="https://flexy-vue3-main-admin.vercel.app/assets/user-3-94da4ac7.jpg"
+                      alt="Roman"
+                      className="w-full rounded-full"
+                    />
+                  </div>
+                  <div>
+                    <p className="text-sm font-bold">New Payment received</p>
+                    <span className="text-sm text-[#585858]">
+                      Check your earnings
+                    </span>
+                  </div>
+                </div>
+                <div className="flex items-center gap-2">
+                  <div className="w-14">
+                    <img
+                      src="https://flexy-vue3-main-admin.vercel.app/assets/user-4-a9b2728d.jpg"
+                      alt="Roman"
+                      className="w-full rounded-full"
+                    />
+                  </div>
+                  <div>
+                    <p className="text-sm font-bold">Jolly completed tasks</p>
+                    <span className="text-sm text-[#585858]">
+                      Assign her new tasks
+                    </span>
+                  </div>
+                </div>
+                <div className="flex items-center gap-2">
+                  <div className="w-14">
+                    <img
+                      src="https://flexy-vue3-main-admin.vercel.app/assets/user-5-77f60b86.jpg"
+                      alt="Roman"
+                      className="w-full rounded-full"
+                    />
+                  </div>
+                  <div>
+                    <p className="text-sm font-bold">New Payment received</p>
+                    <span className="text-sm text-[#585858]">
+                      Check your earnings
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <button className="border border-[#F3A48B] duration-200 text-[#F3A48B] hover:text-white hover:bg-[#F3A48B] w-full rounded-md py-1">
+                  See All Notifications
+                </button>
+              </div>
             </div>
           </div>
           {/* user profile */}
