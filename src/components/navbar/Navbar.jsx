@@ -50,14 +50,17 @@ const Navbar = () => {
             <div className="rounded-full hover:bg-gray-300 cursor-pointer w-10 h-10 flex justify-center items-center">
               <FontAwesomeIcon
                 icon="fa-solid fa-cart-shopping"
-                className="text-2xl"
+                className="text-2xl text-[#3d3d3d]"
               />
             </div>
           </div>
           {/* Notifications */}
           <div className="group relative px-2">
             <div className=" rounded-full hover:bg-gray-300 cursor-pointer w-10 h-10 flex justify-center items-center">
-              <FontAwesomeIcon icon="fa-solid fa-bell" className="text-2xl" />
+              <FontAwesomeIcon
+                icon="fa-solid fa-bell"
+                className="text-2xl text-[#3d3d3d]"
+              />
             </div>
             <div className="group-hover:translate-y-0 text-[#444444] z-20 translate-y-4 w-[340px] p-6 group-hover:opacity-100 opacity-0 group-hover:visible duration-200 origin-top-right invisible overflow-hidden absolute -right-12 sm:right-0 shadow-[rgba(99,99,99,0.2)_0px_2px_8px_0px] rounded-md">
               <div className="flex justify-between items-center">
