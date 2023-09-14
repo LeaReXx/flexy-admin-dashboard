@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { useAuth } from "../../context/AuthContext";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 const Navbar = () => {
   const { userInfos, logOutUser } = useAuth();
   const [currentLang, setCurrentLang] = useState(
@@ -11,7 +10,7 @@ const Navbar = () => {
       <div className="flex justify-between items-center p-4">
         <div className="flex items-center gap-1 md:gap-6">
           <div className="w-10 h-10 hover:bg-gray-300 cursor-pointer flex justify-center items-center rounded-full xl:hidden">
-            <FontAwesomeIcon icon="fa-solid fa-bars" className="text-2xl" />
+            <i className="fa-regular fa-bars text-2xl"></i>
           </div>
           <div>
             <div className="relative w-[330px] hidden md:block">
@@ -20,16 +19,13 @@ const Navbar = () => {
                 placeholder="Search somethings...:)"
                 className="w-full border rounded-xl px-3 py-2 outline-none placeholder:text-sm pr-12"
               />
-              <span className="absolute top-1/2 -translate-y-1/2 right-2 bg-[#F3A48B] flex items-center justify-center p-2 rounded-full duration-200 text-white hover:bg-[#f87b55]">
-                <FontAwesomeIcon
-                  icon="fa-solid fa-search"
-                  className="text-xl  cursor-pointer"
-                />
+              <span className="absolute w-9 h-9 top-1/2 -translate-y-1/2 cursor-pointer right-2 bg-[#F3A48B] flex items-center justify-center p-2 rounded-full duration-200 text-white hover:bg-[#f87b55]">
+                <i className="fa-regular fa-magnifying-glass text-xl"></i>
               </span>
             </div>
           </div>
           <div className="w-10 h-10 group relative px-2 hover:bg-gray-300 cursor-pointer flex justify-center items-center rounded-full md:hidden">
-            <FontAwesomeIcon icon="fa-solid fa-search" className="text-xl" />
+            <i className="fa-regular fa-magnifying-glass text-xl"></i>
             <div className="group-hover:translate-y-14 text-[#444444] z-20 translate-y-8 w-[320px] p-2 group-hover:opacity-100 opacity-0 group-hover:visible duration-200 origin-top-right invisible overflow-hidden absolute -left-12 sm:left-0 shadow-[rgba(99,99,99,0.2)_0px_2px_8px_0px] rounded-md">
               <input
                 type="text"
@@ -48,19 +44,13 @@ const Navbar = () => {
           </div>
           <div className="px-2">
             <div className="rounded-full hover:bg-gray-300 cursor-pointer w-10 h-10 flex justify-center items-center">
-              <FontAwesomeIcon
-                icon="fa-solid fa-cart-shopping"
-                className="text-2xl text-[#3d3d3d]"
-              />
+              <i className="fa-regular fa-cart-shopping text-2xl"></i>
             </div>
           </div>
           {/* Notifications */}
           <div className="group relative px-2">
             <div className=" rounded-full hover:bg-gray-300 cursor-pointer w-10 h-10 flex justify-center items-center">
-              <FontAwesomeIcon
-                icon="fa-solid fa-bell"
-                className="text-2xl text-[#3d3d3d]"
-              />
+              <i className="fa-regular fa-bell text-2xl"></i>
             </div>
             <div className="group-hover:translate-y-0 text-[#444444] z-20 translate-y-4 w-[340px] p-6 group-hover:opacity-100 opacity-0 group-hover:visible duration-200 origin-top-right invisible overflow-hidden absolute -right-12 sm:right-0 shadow-[rgba(99,99,99,0.2)_0px_2px_8px_0px] rounded-md">
               <div className="flex justify-between items-center">
@@ -179,10 +169,7 @@ const Navbar = () => {
                       Developer
                     </span>
                     <span className="text-sm pt-1">
-                      <FontAwesomeIcon
-                        icon="fa-regular fa-envelope"
-                        className="text-lg align-middle"
-                      />{" "}
+                      <i class="fa-regular fa-envelope text-lg align-middle"></i>{" "}
                       {userInfos.email}
                     </span>
                   </div>

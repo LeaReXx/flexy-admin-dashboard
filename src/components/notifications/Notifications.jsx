@@ -1,5 +1,4 @@
 import { toast } from "react-toastify";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 const addNotifToDom = (
   message = "No Message Here 🤨",
   type = "success",
@@ -23,16 +22,15 @@ const addNotifToDom = (
             : "text-[#af0407]" // error
         }`}
       >
-        <FontAwesomeIcon
-          icon={` ${
+        <i
+          className={`text-xl ${
             type === "success"
               ? "fa-regular fa-circle-check" // success
               : type === "warning"
               ? "fa-solid fa-triangle-exclamation" // warning
               : "fa-regular fa-circle-xmark" // error
           }`}
-          className="text-xl"
-        />
+        ></i>
         <strong className="px-1 text-lg font-normal">{message}</strong>
       </div>
     </>,

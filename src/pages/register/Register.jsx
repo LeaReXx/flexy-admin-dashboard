@@ -5,7 +5,6 @@ import googleLogo from "../../assets/imgs/brands/google.png";
 import { Checkbox } from "@material-tailwind/react";
 import { Link } from "react-router-dom";
 import { Input } from "@material-tailwind/react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useAuth } from "../../context/AuthContext";
 export default function Register() {
   const [showPassword, setShowPassword] = useState(false);
@@ -94,12 +93,15 @@ export default function Register() {
                 disabled={loading}
                 minLength={8}
               />
-              <FontAwesomeIcon
+              <i class="fa-regular fa-eye"></i>
+              <i 
                 icon={`${
                   showPassword ? "fa-regular fa-eye-slash" : "fa-regular fa-eye"
                 }`}
                 onClick={() => setShowPassword(!showPassword)}
-                className={`absolute top-1/4 right-3 align-middle text-lg cursor-pointer ${
+                className={`fa-regular fa-eye ${
+                  showPassword ? "fa-eye-slash" : "fa-eye"
+                } absolute top-1/4 right-3 align-middle text-lg cursor-pointer ${
                   showPassword ? "text-black" : "text-[#585858]"
                 }`}
               />
