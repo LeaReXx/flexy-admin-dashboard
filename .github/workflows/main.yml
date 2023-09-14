@@ -14,4 +14,4 @@ jobs:
         server: ${{secrets.GIT_FLEXY_SECRET_SERVER}}
         username: ${{secrets.GIT_FLEXY_SECRET_UERNAME}}
         password: ${{ secrets.GIT_FLEXY_SECRET_PW }}
-        local-dir: '../../dist/'
+        local-dir: './dist/'
