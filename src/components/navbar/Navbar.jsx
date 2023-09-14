@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { useAuth } from "../../context/AuthContext";
+import UK_Flag from "../../assets/imgs/flags/uk_flag.png";
 const Navbar = () => {
   const { userInfos, logOutUser } = useAuth();
-  const [currentLang, setCurrentLang] = useState(
-    "/src/assets/imgs/flags/uk_flag.png"
-  );
+  const [currentLang, setCurrentLang] = useState(UK_Flag);
+
   return (
     <nav>
       <div className="flex justify-between items-center p-4">
@@ -147,8 +147,8 @@ const Navbar = () => {
           <div className="group relative px-2">
             <div className="w-10 rounded-full hover:bg-gray-300 cursor-pointer">
               <img
-                src={userInfos.user_metadata.avatar_url}
-                alt={userInfos.user_metadata.name}
+                src={userInfos.user_metadata?.avatar_url}
+                alt={userInfos.user_metadata?.name}
               />
             </div>
             <div className="group-hover:translate-y-0 text-[#444444] z-20 translate-y-4 w-[360px] p-6 group-hover:opacity-100 opacity-0 group-hover:visible duration-200 origin-top-right invisible overflow-hidden absolute right-0 shadow-[rgba(99,99,99,0.2)_0px_2px_8px_0px] rounded-md">
@@ -157,20 +157,20 @@ const Navbar = () => {
                 <div className="flex gap-2 items-center mt-4">
                   <div className="w-20">
                     <img
-                      src={userInfos.user_metadata.avatar_url}
-                      alt={userInfos.user_metadata.name}
+                      src={userInfos.user_metadata?.avatar_url}
+                      alt={userInfos.user_metadata?.name}
                     />
                   </div>
                   <div className="flex flex-col">
                     <span className="font-medium">
-                      {userInfos.user_metadata.name}
+                      {userInfos.user_metadata?.name}
                     </span>
                     <span className="text-sm text-[#585858] -mt-1">
                       Developer
                     </span>
                     <span className="text-sm pt-1">
-                      <i class="fa-regular fa-envelope text-lg align-middle"></i>{" "}
-                      {userInfos.email}
+                      <i className="fa-regular fa-envelope text-lg align-middle"></i>{" "}
+                      {userInfos?.email}
                     </span>
                   </div>
                 </div>
