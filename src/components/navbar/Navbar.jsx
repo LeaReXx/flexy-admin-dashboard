@@ -7,7 +7,7 @@ const Navbar = ({toggleMobileSideMenu}) => {
 
   return (
     <nav>
-      <div className="flex justify-between items-center p-4">
+      <div className="flex justify-between items-center p-4 flex-wrap-reverse">
         <div className="flex items-center gap-1 md:gap-6">
           <div className="w-10 h-10 hover:bg-gray-300 cursor-pointer flex justify-center items-center rounded-full xl:hidden" onClick={toggleMobileSideMenu}>
             <i className="fa-regular fa-bars text-2xl"></i>
