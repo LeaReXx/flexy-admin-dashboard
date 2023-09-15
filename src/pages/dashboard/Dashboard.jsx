@@ -24,7 +24,7 @@ export default function Dashboard() {
       />
       <main className="w-full">
         <Navbar toggleMobileSideMenu={toggleMobileSideMenu} />
-        <div className="m-auto max-w-[1200px]">
+        <div className="m-auto max-w-[1200px] p-4 sm:p-6">
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quae,
           suscipit? Dicta incidunt explicabo, cupiditate nam pariatur facere eos
           laboriosam impedit recusandae necessitatibus? Reiciendis nihil quas
