@@ -13,7 +13,7 @@ const Navbar = ({toggleMobileSideMenu}) => {
             <i className="fa-regular fa-bars text-2xl"></i>
           </div>
           <div>
-            <div className="relative w-[330px] hidden md:block">
+            <div className="relative w-[330px] hidden md:block ">
               <input
                 type="text"
                 placeholder="Search somethings...:)"
@@ -26,7 +26,7 @@ const Navbar = ({toggleMobileSideMenu}) => {
           </div>
           <div className="w-10 h-10 group relative px-2 hover:bg-gray-300 cursor-pointer flex justify-center items-center rounded-full md:hidden">
             <i className="fa-regular fa-magnifying-glass text-xl"></i>
-            <div className="group-hover:translate-y-14 text-[#444444] z-20 translate-y-8 w-[320px] p-2 group-hover:opacity-100 opacity-0 group-hover:visible duration-200 origin-top-right invisible overflow-hidden absolute -left-12 sm:left-0 shadow-[rgba(99,99,99,0.2)_0px_2px_8px_0px] rounded-md">
+            <div className="bg-white group-hover:translate-y-14 text-[#444444] z-20 translate-y-8 w-[320px] p-2 group-hover:opacity-100 opacity-0 group-hover:visible duration-200 origin-top-right invisible overflow-hidden absolute -left-12 sm:left-0 shadow-[rgba(99,99,99,0.2)_0px_2px_8px_0px] rounded-md">
               <input
                 type="text"
                 placeholder="Search somethings...:)"
@@ -52,7 +52,7 @@ const Navbar = ({toggleMobileSideMenu}) => {
             <div className=" rounded-full hover:bg-gray-300 cursor-pointer w-10 h-10 flex justify-center items-center">
               <i className="fa-regular fa-bell text-2xl"></i>
             </div>
-            <div className="group-hover:translate-y-0 text-[#444444] z-20 translate-y-4 w-[340px] p-6 group-hover:opacity-100 opacity-0 group-hover:visible duration-200 origin-top-right invisible overflow-hidden absolute -right-12 sm:right-0 shadow-[rgba(99,99,99,0.2)_0px_2px_8px_0px] rounded-md">
+            <div className="bg-white group-hover:translate-y-0 text-[#444444] z-20 translate-y-4 w-[340px] p-6 group-hover:opacity-100 opacity-0 group-hover:visible duration-200 origin-top-right invisible overflow-hidden absolute -right-12 sm:right-0 shadow-[rgba(99,99,99,0.2)_0px_2px_8px_0px] rounded-md">
               <div className="flex justify-between items-center">
                 <span className="text-lg font-medium">Notifications</span>
                 <span className="text-white bg-[#F3A48B] text-xs rounded-full p-1">
@@ -151,7 +151,7 @@ const Navbar = ({toggleMobileSideMenu}) => {
                 alt={userInfos.user_metadata?.name}
               />
             </div>
-            <div className="group-hover:translate-y-0 text-[#444444] z-20 translate-y-4 w-[360px] p-6 group-hover:opacity-100 opacity-0 group-hover:visible duration-200 origin-top-right invisible overflow-hidden absolute right-0 shadow-[rgba(99,99,99,0.2)_0px_2px_8px_0px] rounded-md">
+            <div className="bg-white group-hover:translate-y-0 text-[#444444] z-20 translate-y-4 w-[360px] p-6 group-hover:opacity-100 opacity-0 group-hover:visible duration-200 origin-top-right invisible overflow-hidden absolute right-0 shadow-[rgba(99,99,99,0.2)_0px_2px_8px_0px] rounded-md">
               <div>
                 <span className="text-lg font-medium">User Profile</span>
                 <div className="flex gap-2 items-center mt-4">
