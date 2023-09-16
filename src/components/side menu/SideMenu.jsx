@@ -2,7 +2,7 @@ import logo from "../../assets/imgs/logo.svg";
 
 const SideMenu = ({ toggleMobileSideMenu, mobileSideMenu }) => {
   return (
-    <div className="z-30">
+    <div className="z-30 h-screen fixed">
       <div
         className={`w-screen h-screen fixed top-0 xl:hidden bg-[#49494970] ${
           mobileSideMenu ? "opacity-100 visible" : "invisible opacity-0"
