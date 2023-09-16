@@ -27,15 +27,15 @@ const SideMenu = ({ toggleMobileSideMenu, mobileSideMenu }) => {
             <div>
               <ul className="text-sm">
                 <li className=" rounded-md py-3 bg-[#58CAD6] text-[#F6F6F6] my-1 cursor-pointer">
-                  <i class="fa-regular fa-house fa-fw mx-2 text-[16px]"></i>
+                  <i className="fa-regular fa-house fa-fw mx-2 text-[16px]"></i>
                   Dashboard
                 </li>
                 <li className="hover:bg-[#F6F6F6] hover:text-[#58cad6] rounded-md py-3 my-1 cursor-pointer">
-                  <i class="fa-regular fa-cart-shopping fa-fw mx-2 text-[16px]"></i>
+                  <i className="fa-regular fa-cart-shopping fa-fw mx-2 text-[16px]"></i>
                   eCommerce
                 </li>
                 <li className="hover:bg-[#F6F6F6] hover:text-[#58cad6] rounded-md py-3 my-1 cursor-pointer">
-                  <i class="fa-regular fa-sparkles fa-fw mx-2 text-[16px]"></i>
+                  <i className="fa-regular fa-sparkles fa-fw mx-2 text-[16px]"></i>
                   Modern
                 </li>
               </ul>
@@ -48,22 +48,22 @@ const SideMenu = ({ toggleMobileSideMenu, mobileSideMenu }) => {
             <div>
               <ul className="text-sm">
                 <li className="hover:bg-[#F6F6F6] hover:text-[#58cad6] rounded-md py-3 my-1 cursor-pointer">
-                  <i class="fa-regular fa-address-book fa-fw mx-2 text-[16px]"></i>
+                  <i className="fa-regular fa-address-book fa-fw mx-2 text-[16px]"></i>
                   Contact
                 </li>
                 <li className="hover:bg-[#F6F6F6] hover:text-[#58cad6] rounded-md py-3 my-1 cursor-pointer">
-                  <i class="fa-regular fa-message-lines fa-fw mx-2 text-[16px]"></i>
+                  <i className="fa-regular fa-message-lines fa-fw mx-2 text-[16px]"></i>
                   Chats
                 </li>
                 <li className="hover:bg-[#F6F6F6] hover:text-[#58cad6] rounded-md py-3 my-1 cursor-pointer">
-                  <i class="fa-regular fa-blog fa-fw mx-2 text-[16px]"></i>Blog
+                  <i className="fa-regular fa-blog fa-fw mx-2 text-[16px]"></i>Blog
                 </li>
                 <li className="hover:bg-[#F6F6F6] hover:text-[#58cad6] rounded-md py-3 my-1 cursor-pointer">
-                  <i class="fa-regular fa-notes fa-fw mx-2 text-[16px]"></i>
+                  <i className="fa-regular fa-notes fa-fw mx-2 text-[16px]"></i>
                   Notes
                 </li>
                 <li className="hover:bg-[#F6F6F6] hover:text-[#58cad6] rounded-md py-3 my-1 cursor-pointer">
-                  <i class="fa-regular fa-user fa-fw mx-2 text-[16px]"></i>
+                  <i className="fa-regular fa-user fa-fw mx-2 text-[16px]"></i>
                   Profile
                 </li>
               </ul>
