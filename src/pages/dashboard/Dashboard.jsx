@@ -24,13 +24,15 @@ export default function Dashboard() {
       />
       <main className="w-full">
         <Navbar toggleMobileSideMenu={toggleMobileSideMenu} />
-        <div className="m-auto w-full max-w-[1200px] p-4 sm:p-6">
+        <div className="p-4 sm:p-6">
+        <div className="mx-auto w-full max-w-[1200px]">
           <PageHeader
             route={[
               { id: 1, title: "Dashboard", src: "/dashboard" },
               { id: 2, title: "Analytical", src: "/dashboard" },
             ]}
           />
+        </div>
         </div>
       </main>
     </div>
