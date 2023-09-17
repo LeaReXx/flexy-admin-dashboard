@@ -121,7 +121,7 @@ const FinancialReport = ({ name }) => {
             </button>
           </div>
         </div>
-        <div className="w-full shadow-md bg-white col-span-4 row-span-2 xl:col-span-2 rounded-xl xl:row-span-2 border p-4">
+        <div className="w-full shadow-md bg-white col-span-4 row-span-2 xl:col-span-2 rounded-xl xl:row-span-2 border p-4 flex flex-col justify-between">
           <div className="flex justify-between items-center">
             <div>
               <p className="text-xl">Sales Overview</p>
