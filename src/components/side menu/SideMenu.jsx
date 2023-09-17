@@ -10,7 +10,7 @@ const SideMenu = ({ toggleMobileSideMenu, mobileSideMenu }) => {
         onClick={toggleMobileSideMenu}
       ></div>
       <article
-        className={`bg-white shadow-md p-4 h-screen w-[260px] fixed xl:translate-x-0 xl:static xl:visible top-0 left-0 duration-300 ease ${
+        className={`bg-white shadow-md p-4 h-screen w-[250px] fixed xl:translate-x-0 xl:static xl:visible top-0 left-0 duration-300 ease ${
           mobileSideMenu
             ? "translate-x-0 visible"
             : "-translate-x-[400px] invisible"
