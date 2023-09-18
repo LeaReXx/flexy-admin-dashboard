@@ -93,15 +93,11 @@ export default function Register() {
                 disabled={loading}
                 minLength={8}
               />
-              <i class="fa-regular fa-eye"></i>
               <i 
-                icon={`${
-                  showPassword ? "fa-regular fa-eye-slash" : "fa-regular fa-eye"
-                }`}
                 onClick={() => setShowPassword(!showPassword)}
-                className={`fa-regular fa-eye ${
-                  showPassword ? "fa-eye-slash" : "fa-eye"
-                } absolute top-1/4 right-3 align-middle text-lg cursor-pointer ${
+                className={`fa-regular ${
+                  showPassword ? "fa-eye" : "fa-eye-slash"
+                } absolute top-2 right-3 align-middle text-lg cursor-pointer ${
                   showPassword ? "text-black" : "text-[#585858]"
                 }`}
               />
