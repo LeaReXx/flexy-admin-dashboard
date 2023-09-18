@@ -106,7 +106,7 @@ const FinancialReport = ({ name }) => {
 
   return (
     <section>
-      <div className="grid grid-cols-4 grid-rows-4 xl:grid-rows-2 gap-6 xl:gap-4">
+      <div className="grid grid-cols-4 grid-rows-5 xl:grid-rows-2 gap-6 xl:gap-4 2xl:gap-6">
         <div className="shadow-md px-6 py-8 w-full basis-full border relative overflow-hidden bg-white col-span-4 row-span-1 rounded-xl xl:col-span-2 xl:row-span-1">
           <img
             src={girlImage}
@@ -147,8 +147,8 @@ const FinancialReport = ({ name }) => {
             />
           </div>
         </div>
-        <div className="w-full shadow-md bg-white col-span-4 sm:col-span-2 sm:row-span-1 xl:col-span-1 rounded-xl xl:row-span-1 border"></div>
-        <div className="w-full shadow-md bg-white col-span-4 sm:col-span-2 sm:row-span-1 xl:col-span-1 rounded-xl xl:row-span-1 border"></div>
+        <div className="w-full shadow-md col-span-4 row-span-1 sm:col-span-2 sm:row-span-1 xl:col-span-1 rounded-xl xl:row-span-1 border bg-[#fb9678]"></div>
+        <div className="w-full shadow-md  col-span-4 row-span-1 sm:col-span-2 sm:row-span-1 xl:col-span-1 rounded-xl xl:row-span-1 border bg-[#03c9d7]"></div>
       </div>
     </section>
   );
