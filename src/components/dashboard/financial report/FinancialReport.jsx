@@ -147,8 +147,19 @@ const FinancialReport = ({ name }) => {
             />
           </div>
         </div>
-        <div className="w-full shadow-md col-span-4 row-span-1 sm:col-span-2 sm:row-span-1 xl:col-span-1 rounded-xl xl:row-span-1 border bg-[#fb9678]"></div>
-        <div className="w-full shadow-md  col-span-4 row-span-1 sm:col-span-2 sm:row-span-1 xl:col-span-1 rounded-xl xl:row-span-1 border bg-[#03c9d7]"></div>
+        <div className="w-full shadow-md relative col-span-4 text-white row-span-1 sm:col-span-2 sm:row-span-1 xl:col-span-1 rounded-xl xl:row-span-1 border bg-[#fb9678] p-6 flex flex-col justify-between">
+          <span className="h-12 w-12 rounded-full flex justify-center items-center absolute bg-white top-6 right-6">
+            <i class="fa-regular fa-dollar-sign text-[#fb9678] text-2xl"></i>
+          </span>
+          <div>
+            <p className="text-2xl">Earnings</p>
+          </div>
+          <div>
+            <p className="text-xl">$93,438.78</p>
+            <p className="text-sm">Monthly revenue</p>
+          </div>
+        </div>
+        <div className="w-full shadow-md  col-span-4 row-span-1 sm:col-span-2 sm:row-span-1 xl:col-span-1 rounded-xl xl:row-span-1 border bg-[#03c9d7] p-6"></div>
       </div>
     </section>
   );
