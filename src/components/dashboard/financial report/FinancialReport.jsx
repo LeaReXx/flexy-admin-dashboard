@@ -15,7 +15,6 @@ const FinancialReport = ({ name }) => {
 
     options: {
       chart: {
-        type: "bar",
         fontFamily: "roboto",
         toolbar: {
           show: false,
@@ -104,6 +103,82 @@ const FinancialReport = ({ name }) => {
     },
   };
 
+  const area = {
+    series: [
+      {
+        name: "series",
+        data: [33, 35, 36, 33, 34],
+      },
+    ],
+    options: {
+      chart: {
+        parentHeightOffset: 0,
+        sparkline: {
+          enabled: true,
+        },
+        toolbar: {
+          show: false,
+        },
+        height: 350,
+        type: "area",
+      },
+      dataLabels: {
+        enabled: false,
+      },
+      legend: {
+        show: false,
+      },
+      animations: {
+        enabled: true,
+        easing: "easeinout",
+        speed: 800,
+        animateGradually: {
+          enabled: true,
+          delay: 150,
+        },
+        dynamicAnimation: {
+          enabled: true,
+          speed: 350,
+        },
+      },
+      plotOptions: {
+        bar: {
+          horizontal: false,
+          columnWidth: "55%",
+          endingShape: "rounded",
+          borderRadius: 5,
+          borderRadiusApplication: "end",
+          borderRadiusWhenStacked: "last",
+        },
+      },
+      stroke: {
+        curve: "smooth",
+        width: 2,
+        colors: ["#fff"],
+      },
+      fill: {
+        opacity: 1,
+        colors: ["#fff"],
+      },
+      grid: {
+        show: false,
+        padding: {
+          left: 0,
+          right: 0,
+        },
+      },
+      xaxis: {
+        labels: {
+          show: false,
+        },
+      },
+      yaxis: {
+        labels: {
+          show: false,
+        },
+      },
+    },
+  };
   return (
     <section>
       <div className="grid grid-cols-4 grid-rows-5 xl:grid-rows-2 gap-6 xl:gap-4 2xl:gap-6">
@@ -148,7 +223,7 @@ const FinancialReport = ({ name }) => {
           </div>
         </div>
         <div className="w-full shadow-md relative col-span-4 text-white row-span-1 sm:col-span-2 sm:row-span-1 xl:col-span-1 rounded-xl xl:row-span-1 border bg-[#fb9678] p-6 flex flex-col justify-between">
-          <span className="h-12 w-12 rounded-full flex justify-center items-center absolute bg-white top-6 right-6">
+          <span className="h-12 w-12 rounded-full flex justify-center items-center absolute bg-white top-6 right-6 shadow-md">
             <i class="fa-regular fa-dollar-sign text-[#fb9678] text-2xl"></i>
           </span>
           <div>
@@ -159,7 +234,25 @@ const FinancialReport = ({ name }) => {
             <p className="text-sm">Monthly revenue</p>
           </div>
         </div>
-        <div className="w-full shadow-md  col-span-4 row-span-1 sm:col-span-2 sm:row-span-1 xl:col-span-1 rounded-xl xl:row-span-1 border bg-[#03c9d7] p-6"></div>
+        <div className="w-full shadow-md relative flex flex-col justify-between col-span-4 row-span-1 sm:col-span-2 sm:row-span-1 xl:col-span-1 rounded-xl xl:row-span-1 border bg-[#03c9d7]">
+          <span className="h-12 w-12 rounded-full flex justify-center items-center absolute bg-white top-6 right-6 shadow-md">
+            <i className="fa-regular fa-basket-shopping text-[#03c9d7] text-2xl"></i>
+          </span>
+          <div className="text-white p-6">
+            <p className="text-sm">Monthly revenue</p>
+            <p className="text-lg">3246</p>
+          </div>
+          <div>
+            <ReactApexChart
+              options={area.options}
+              series={area.series}
+              type="area"
+              borderRadius={50}
+              height="80px"
+              width="100%"
+            />
+          </div>
+        </div>
       </div>
     </section>
   );
