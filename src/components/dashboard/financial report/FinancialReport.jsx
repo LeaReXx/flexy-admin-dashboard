@@ -181,7 +181,7 @@ const FinancialReport = ({ name }) => {
   };
   return (
     <section>
-      <div className="grid grid-cols-4 grid-rows-5 xl:grid-rows-2 gap-6 xl:gap-4 2xl:gap-6">
+      <div className="grid grid-cols-4 grid-rows-4 xl:grid-rows-2 gap-6 xl:gap-4 2xl:gap-6">
         <div className="shadow-md px-6 py-8 w-full basis-full border relative overflow-hidden bg-white col-span-4 row-span-1 rounded-xl xl:col-span-2 xl:row-span-1">
           <img
             src={girlImage}
@@ -222,7 +222,7 @@ const FinancialReport = ({ name }) => {
             />
           </div>
         </div>
-        <div className="w-full shadow-md relative col-span-4 text-white row-span-1 sm:col-span-2 sm:row-span-1 xl:col-span-1 rounded-xl xl:row-span-1 border bg-[#fb9678] p-6 flex flex-col justify-between">
+        <div className="w-full overflow-hidden shadow-md relative col-span-4 text-white row-span-1 sm:col-span-2 sm:row-span-1 xl:col-span-1 rounded-xl xl:row-span-1 border bg-[#fb9678] p-6 flex flex-col justify-between">
           <span className="h-12 w-12 rounded-full flex justify-center items-center absolute bg-white top-6 right-6 shadow-md">
             <i className="fa-regular fa-dollar-sign text-[#fb9678] text-2xl"></i>
           </span>
@@ -234,7 +234,7 @@ const FinancialReport = ({ name }) => {
             <p className="text-sm">Monthly revenue</p>
           </div>
         </div>
-        <div className="w-full shadow-md relative flex flex-col justify-between col-span-4 row-span-1 sm:col-span-2 sm:row-span-1 xl:col-span-1 rounded-xl xl:row-span-1 border bg-[#03c9d7]">
+        <div className="w-full overflow-hidden shadow-md relative flex flex-col justify-between col-span-4 row-span-1 sm:col-span-2 sm:row-span-1 xl:col-span-1 rounded-xl xl:row-span-1 border bg-[#03c9d7]">
           <span className="h-12 w-12 rounded-full flex justify-center items-center absolute bg-white top-6 right-6 shadow-md">
             <i className="fa-regular fa-basket-shopping text-[#03c9d7] text-2xl"></i>
           </span>

@@ -34,8 +34,10 @@ export default function Dashboard() {
                 { id: 2, title: "Analytical", src: "/dashboard" },
               ]}
             />
-            <div className="mt-4">
-              <FinancialReport name={userInfos.user_metadata?.name || 'Unknown User'} />
+            <div className="mt-4 flex flex-col gap-6">
+              <FinancialReport
+                name={userInfos.user_metadata?.name || "Unknown User"}
+              />
               <ProductSales />
             </div>
           </div>
