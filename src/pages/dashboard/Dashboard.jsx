@@ -5,6 +5,7 @@ import Navbar from "../../components/navbar/Navbar";
 import SideMenu from "../../components/side menu/SideMenu";
 import PageHeader from "../../components/page header/PageHeader";
 import FinancialReport from "../../components/dashboard/financial report/FinancialReport";
+import ProductSales from "../../components/dashboard/product sales/ProductSales";
 
 export default function Dashboard() {
   const { logOutUser, isLoggedIn, userInfos } = useAuth();
@@ -34,7 +35,8 @@ export default function Dashboard() {
               ]}
             />
             <div className="mt-4">
-              <FinancialReport name={userInfos.user_metadata.name} />
+              <FinancialReport name={userInfos.user_metadata?.name || 'Unknown User'} />
+              <ProductSales />
             </div>
           </div>
         </div>

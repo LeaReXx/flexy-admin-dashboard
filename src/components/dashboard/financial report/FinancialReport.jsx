@@ -224,7 +224,7 @@ const FinancialReport = ({ name }) => {
         </div>
         <div className="w-full shadow-md relative col-span-4 text-white row-span-1 sm:col-span-2 sm:row-span-1 xl:col-span-1 rounded-xl xl:row-span-1 border bg-[#fb9678] p-6 flex flex-col justify-between">
           <span className="h-12 w-12 rounded-full flex justify-center items-center absolute bg-white top-6 right-6 shadow-md">
-            <i class="fa-regular fa-dollar-sign text-[#fb9678] text-2xl"></i>
+            <i className="fa-regular fa-dollar-sign text-[#fb9678] text-2xl"></i>
           </span>
           <div>
             <p className="text-2xl">Earnings</p>
@@ -247,7 +247,6 @@ const FinancialReport = ({ name }) => {
               options={area.options}
               series={area.series}
               type="area"
-              borderRadius={50}
               height="80px"
               width="100%"
             />
