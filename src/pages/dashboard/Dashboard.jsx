@@ -24,7 +24,7 @@ export default function Dashboard() {
         toggleMobileSideMenu={toggleMobileSideMenu}
         mobileSideMenu={mobileSideMenu}
       />
-      <main className="w-full xl:pl-[250px] duration-300">
+      <main className="w-full 2xl:pl-[250px] duration-300">
         <Navbar toggleMobileSideMenu={toggleMobileSideMenu} />
         <div className="p-4 sm:p-6">
           <div className="mx-auto w-full max-w-[1200px]">

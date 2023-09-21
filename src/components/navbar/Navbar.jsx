@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useAuth } from "../../context/AuthContext";
 import UK_Flag from "../../assets/imgs/flags/uk_flag.png";
-const Navbar = ({toggleMobileSideMenu}) => {
+const Navbar = ({ toggleMobileSideMenu }) => {
   const { userInfos, logOutUser } = useAuth();
   const [currentLang, setCurrentLang] = useState(UK_Flag);
 
@@ -9,7 +9,10 @@ const Navbar = ({toggleMobileSideMenu}) => {
     <nav>
       <div className="flex justify-between items-center p-4 flex-wrap-reverse">
         <div className="flex items-center gap-1 md:gap-6">
-          <div className="w-10 h-10 hover:bg-gray-300 cursor-pointer flex justify-center items-center rounded-full xl:hidden" onClick={toggleMobileSideMenu}>
+          <div
+            className="w-10 h-10 hover:bg-gray-300 cursor-pointer flex justify-center items-center rounded-full 2xl:hidden"
+            onClick={toggleMobileSideMenu}
+          >
             <i className="fa-regular fa-bars text-2xl"></i>
           </div>
           <div>
