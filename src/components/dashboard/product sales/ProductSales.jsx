@@ -1,4 +1,9 @@
 import ReactApexChart from "react-apexcharts";
+import userImage1 from "../../../assets/imgs/components image/1-32ddcd87.jpg";
+import userImage2 from "../../../assets/imgs/components image/2-1c16a104.jpg";
+import userImage3 from "../../../assets/imgs/components image/3-0594bd0b.jpg";
+import userImage4 from "../../../assets/imgs/components image/4-76ce6c0c.jpg";
+import userImage5 from "../../../assets/imgs/components image/5-d39d5aaf.jpg";
 const ProductSales = () => {
   const donut = {
     series: [44, 55, 41, 25],
@@ -25,6 +30,59 @@ const ProductSales = () => {
       },
     },
   };
+
+  const performanceData = [
+    {
+      id: 1,
+      image: userImage1,
+      name: "Sunil Joshi",
+      position: "Elite Admin",
+      job: "Web Designer",
+      priority: "Low",
+      priorityColor: "#77BA8A",
+      budget: "3.9",
+    },
+    {
+      id: 2,
+      image: userImage2,
+      name: "Andrew",
+      position: "Real Homes",
+      job: "Project Manager",
+      priority: "Medium",
+      priorityColor: "#60B1FF",
+      budget: "23.9",
+    },
+    {
+      id: 3,
+      image: userImage3,
+      name: "Bhavesh patel",
+      position: "MedicalPro Theme",
+      job: "Developer",
+      priority: "High",
+      priorityColor: "#687A8C",
+      budget: "12.9",
+    },
+    {
+      id: 4,
+      image: userImage4,
+      name: "Nirav Joshi",
+      position: "Elite Admin",
+      job: "Frontend Eng",
+      priority: "Low",
+      priorityColor: "#F3A09C",
+      budget: "10.9",
+    },
+    {
+      id: 5,
+      image: userImage5,
+      name: "Micheal Doe",
+      position: "Helping Hands",
+      job: "Content Writer",
+      priority: "High",
+      priorityColor: "#F6C847",
+      budget: "12.9",
+    },
+  ];
   return (
     <div className="grid grid-cols-6 grid-rows-2 gap-6 lg:gap-4 2xl:gap-6">
       <div className="w-full p-4 shadow-md relative flex flex-col justify-between col-span-6 row-span-3 xl:col-span-2 rounded-xl lg:row-span-1 border bg-white">
@@ -78,6 +136,55 @@ const ProductSales = () => {
               <option value="6">October</option>
             </select>
           </div>
+        </div>
+        <div className="overflow-x-auto">
+          <table className="table-auto w-full mt-6 min-w-[550px]">
+            <thead>
+              <tr className="text-left text-[#6b6b6b] font-medium">
+                <th className="font-normal py-2">Assigned</th>
+                <th className="font-normal py-2">Name</th>
+                <th className="font-normal py-2">Priority</th>
+                <th className="font-normal py-2">Budget</th>
+              </tr>
+            </thead>
+            <tbody>
+              {performanceData.map((item) => (
+                <tr key={item.id} className="border-t">
+                  {console.log(item)}
+                  <td className="py-2 flex items-center gap-2">
+                    <div className="w-10 rounded-full overflow-hidden">
+                      <img
+                        src={item.image}
+                        alt={item.name}
+                        className="w-full"
+                      />
+                    </div>
+                    <div>
+                      <p className="font-medium ">{item.name}</p>
+                      <p className="text-sm text-[#6b6b6b]">{item.job}</p>
+                    </div>
+                  </td>
+                  <td className="py-2 text-[#6b6b6b] text-sm">
+                    {item.position}
+                  </td>
+                  <td className="py-2 text-sm">
+                    <span
+                      className="p-1 rounded-md"
+                      style={{
+                        color: item.priorityColor,
+                        backgroundColor: item.priorityColor + 30,
+                      }}
+                    >
+                      {item.priority}
+                    </span>
+                  </td>
+                  <td className="py-2 text-sm font-semibold">
+                    ${item.budget}K
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
       </div>
 
