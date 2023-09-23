@@ -4,6 +4,7 @@ import userImage2 from "../../../assets/imgs/components image/2-1c16a104.jpg";
 import userImage3 from "../../../assets/imgs/components image/3-0594bd0b.jpg";
 import userImage4 from "../../../assets/imgs/components image/4-76ce6c0c.jpg";
 import userImage5 from "../../../assets/imgs/components image/5-d39d5aaf.jpg";
+import postImage from "../../../assets/imgs/components image/blog-bg-2x-7983955c.jpg";
 const ProductSales = () => {
   const donut = {
     series: [44, 55, 41, 25],
@@ -188,13 +189,51 @@ const ProductSales = () => {
         </div>
       </div>
 
-      <div className="w-full p-4 shadow-md relative flex flex-col justify-between col-span-6 row-span-1 xl:col-span-2 rounded-xl lg:row-span-1 border bg-white">
-        <div className="flex">
-          <div>
-            <p className="text-xl">blog Posts</p>
+      <div className="w-full overflow-hidden shadow-md relative flex flex-col justify-between col-span-6 row-span-1 xl:col-span-2 rounded-xl lg:row-span-1 border bg-white">
+        <div className="w-full">
+          <img src={postImage} alt="Blog post" className="w-full h-full" />
+        </div>
+        <div className="p-4 my-4">
+          <div className="flex gap-2 items-center text-[#585858]">
+            <i className="fa-sharp fa-regular fa-clock text-xl"></i>
+            <span className="text-lg">22 March, 2023</span>
+          </div>
+          <div className="my-2">
+            <p className="text-lg">Super awesome, React is coming!</p>
+          </div>
+          <div className="text-xs flex gap-3 my-2">
+            <span className="text-[#ffa089] bg-[#ffa089] rounded-md bg-opacity-20 px-2 py-1">
+              Low
+            </span>
+            <span className="text-[#a1a2ff] bg-[#a1a2ff] rounded-md bg-opacity-20 px-2 py-1">
+              Medium
+            </span>
+          </div>
+          <div className="flex justify-between items-center mt-12">
+            <div className="w-12 flex gap-4">
+              <img
+                src={userImage1}
+                alt="Profile image"
+                className="rounded-full"
+              />
+              <img
+                src={userImage2}
+                alt="Profile image"
+                className="rounded-full"
+              />
+              <img
+                src={userImage3}
+                alt="Profile image"
+                className="rounded-full"
+              />
+            </div>
+            <div className="w-10 h-10 hover:bg-gray-300 cursor-pointer flex justify-center items-center rounded-full">
+              <i className="fa-sharp fa-regular fa-comment text-2xl"></i>
+            </div>
           </div>
         </div>
       </div>
+
       <div className="w-full p-4 shadow-md relative flex flex-col justify-between col-span-6 row-span-1 xl:col-span-2 rounded-xl lg:row-span-1 border bg-white">
         <div className="flex">
           <div>
