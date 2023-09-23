@@ -6,7 +6,7 @@ const Navbar = ({ toggleMobileSideMenu }) => {
   const [currentLang, setCurrentLang] = useState(UK_Flag);
 
   return (
-    <nav>
+    <nav className="overflow-hidden">
       <div className="flex justify-between items-center p-4 flex-wrap-reverse">
         <div className="flex items-center gap-1 md:gap-6">
           <div
