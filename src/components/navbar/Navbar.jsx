@@ -6,9 +6,9 @@ const Navbar = ({ toggleMobileSideMenu }) => {
   const [currentLang, setCurrentLang] = useState(UK_Flag);
 
   return (
-    <nav className="overflow-hidden">
+    <nav>
       <div className="flex justify-between items-center p-4 flex-wrap-reverse">
-        <div className="flex items-center gap-1 md:gap-6">
+        <div className="flex items-center md:gap-6">
           <div
             className="w-10 h-10 hover:bg-gray-300 cursor-pointer flex justify-center items-center rounded-full 2xl:hidden"
             onClick={toggleMobileSideMenu}
@@ -16,7 +16,7 @@ const Navbar = ({ toggleMobileSideMenu }) => {
             <i className="fa-regular fa-bars text-2xl"></i>
           </div>
           <div>
-            <div className="relative w-[330px] hidden md:block ">
+            <div className="relative w-[330px] hidden md:block">
               <input
                 type="text"
                 placeholder="Search somethings...:)"
