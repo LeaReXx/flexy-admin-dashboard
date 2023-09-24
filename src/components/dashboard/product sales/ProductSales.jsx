@@ -84,6 +84,83 @@ const ProductSales = () => {
       budget: "12.9",
     },
   ];
+
+  const area = {
+    series: [
+      {
+        name: "series",
+        data: [33, 35, 36, 33, 34],
+      },
+    ],
+    options: {
+      chart: {
+        parentHeightOffset: 0,
+        sparkline: {
+          enabled: true,
+        },
+        toolbar: {
+          show: false,
+        },
+        height: 350,
+        type: "area",
+      },
+      dataLabels: {
+        enabled: false,
+      },
+      legend: {
+        show: false,
+      },
+      animations: {
+        enabled: true,
+        easing: "easeinout",
+        speed: 800,
+        animateGradually: {
+          enabled: true,
+          delay: 150,
+        },
+        dynamicAnimation: {
+          enabled: true,
+          speed: 350,
+        },
+      },
+      plotOptions: {
+        bar: {
+          horizontal: false,
+          columnWidth: "55%",
+          endingShape: "rounded",
+          borderRadius: 5,
+          borderRadiusApplication: "end",
+          borderRadiusWhenStacked: "last",
+        },
+      },
+      stroke: {
+        curve: "smooth",
+        width: 2,
+        colors: ["#60B1FF"],
+      },
+      fill: {
+        opacity: 1,
+        colors: ["#60B1FF"],
+      },
+      grid: {
+        show: false,
+        padding: {
+          left: 0,
+          right: 0,
+        },
+      },
+      xaxis: {
+        labels: {
+          show: false,
+        },
+      },
+      yaxis: {
+        labels: {
+          show: false,
+        },
+      },
+    },
+  };
   return (
     <div className="grid grid-cols-6 grid-rows-2 gap-6 lg:gap-4 2xl:gap-6">
       <div className="w-full p-4 shadow-md relative flex flex-col justify-between col-span-6 row-span-3 xl:col-span-2 rounded-xl lg:row-span-1 border bg-white">
@@ -234,11 +311,83 @@ const ProductSales = () => {
         </div>
       </div>
 
-      <div className="w-full p-4 shadow-md relative flex flex-col justify-between col-span-6 row-span-1 xl:col-span-2 rounded-xl lg:row-span-1 border bg-white">
-        <div className="flex">
+      <div className="w-full shadow-md relative flex flex-col justify-between col-span-6 row-span-1 xl:col-span-2 rounded-xl lg:row-span-1 border bg-white">
+        <div className="flex justify-between items-center p-4">
           <div>
             <p className="text-xl">Weekly Stats</p>
           </div>
+          <div>
+            <select
+              defaultValue="1"
+              className="border py-2 rounded-md text-md text-[#686868] outline-orange-700"
+            >
+              <option value="1">March</option>
+              <option value="2">April</option>
+              <option value="3">May</option>
+              <option value="4">June</option>
+              <option value="5">September</option>
+              <option value="6">October</option>
+            </select>
+          </div>
+        </div>
+        <div className="flex flex-col gap-6 p-4">
+          <div className="flex items-center justify-between">
+            <div className="flex gap-2 items-center">
+              <div className="bg-[#F2997D] w-12 h-12 flex justify-center items-center text-white rounded-full">
+                <i class="fa-regular fa-cart-shopping"></i>
+              </div>
+              <div>
+                <p className="font-medium text-[#3b3b3b]">Top Sales</p>
+                <p className="text-sm text-[#585858]">Johnathan Doe</p>
+              </div>
+            </div>
+            <div>
+              <span className="bg-[#E4E4E4] text-xs font-medium px-2 py-1 rounded-md">
+                +68%
+              </span>
+            </div>
+          </div>
+          <div className="flex items-center justify-between">
+            <div className="flex gap-2 items-center">
+              <div className="bg-[#F6CA25] w-12 h-12 flex justify-center items-center text-white rounded-full">
+                <i class="fa-regular fa-star"></i>
+              </div>
+              <div>
+                <p className="font-medium text-[#3b3b3b]">Best Seller</p>
+                <p className="text-sm text-[#585858]">MaterialPro Admin</p>
+              </div>
+            </div>
+            <div>
+              <span className="bg-[#E4E4E4] text-xs font-medium px-2 py-1 rounded-md">
+                +25%
+              </span>
+            </div>
+          </div>
+          <div className="flex items-center justify-between">
+            <div className="flex gap-2 items-center">
+              <div className="bg-[#4EB48C] w-12 h-12 flex justify-center items-center text-white rounded-full">
+                <i class="fa-sharp fa-regular fa-comment"></i>
+              </div>
+              <div>
+                <p className="font-medium text-[#3b3b3b]">Most Commented</p>
+                <p className="text-sm text-[#585858]">Ample Admin</p>
+              </div>
+            </div>
+            <div>
+              <span className="bg-[#E4E4E4] text-xs font-medium px-2 py-1 rounded-md">
+                +43%
+              </span>
+            </div>
+          </div>
+        </div>
+        <div>
+          <ReactApexChart
+            options={area.options}
+            series={area.series}
+            type="area"
+            height="160px"
+            width="100%"
+          />
         </div>
       </div>
       <div className="w-full p-4 shadow-md relative flex flex-col justify-between col-span-6 row-span-1 xl:col-span-2 rounded-xl lg:row-span-1 border bg-white">
