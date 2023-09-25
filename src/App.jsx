@@ -15,7 +15,7 @@ function App() {
   return (
     <Router>
       <AuthProvider>
-        <ToastContainer />
+        <ToastContainer style={{ width: "fit-content" }} />
         <ThemeProvider>
           <Routes>
             <Route path="/" element={<Home />} index />
