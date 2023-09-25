@@ -228,7 +228,6 @@ const ProductSales = () => {
             <tbody>
               {performanceData.map((item) => (
                 <tr key={item.id} className="border-t">
-                  {console.log(item)}
                   <td className="py-2 flex items-center gap-2">
                     <div className="w-10 rounded-full overflow-hidden">
                       <img
@@ -334,7 +333,7 @@ const ProductSales = () => {
           <div className="flex items-center justify-between">
             <div className="flex gap-2 items-center">
               <div className="bg-[#F2997D] w-12 h-12 flex justify-center items-center text-white rounded-full">
-                <i class="fa-regular fa-cart-shopping"></i>
+                <i className="fa-regular fa-cart-shopping"></i>
               </div>
               <div>
                 <p className="font-medium text-[#3b3b3b]">Top Sales</p>
@@ -350,7 +349,7 @@ const ProductSales = () => {
           <div className="flex items-center justify-between">
             <div className="flex gap-2 items-center">
               <div className="bg-[#F6CA25] w-12 h-12 flex justify-center items-center text-white rounded-full">
-                <i class="fa-regular fa-star"></i>
+                <i className="fa-regular fa-star"></i>
               </div>
               <div>
                 <p className="font-medium text-[#3b3b3b]">Best Seller</p>
@@ -366,7 +365,7 @@ const ProductSales = () => {
           <div className="flex items-center justify-between">
             <div className="flex gap-2 items-center">
               <div className="bg-[#4EB48C] w-12 h-12 flex justify-center items-center text-white rounded-full">
-                <i class="fa-sharp fa-regular fa-comment"></i>
+                <i className="fa-sharp fa-regular fa-comment"></i>
               </div>
               <div>
                 <p className="font-medium text-[#3b3b3b]">Most Commented</p>
@@ -391,9 +390,44 @@ const ProductSales = () => {
         </div>
       </div>
       <div className="w-full p-4 shadow-md relative flex flex-col justify-between col-span-6 row-span-1 xl:col-span-2 rounded-xl lg:row-span-1 border bg-white">
-        <div className="flex">
+        <div className="flex justify-between items-center">
           <div>
             <p className="text-xl">Daily Activities</p>
+          </div>
+          <div>
+            <select
+              defaultValue="1"
+              className="border py-2 rounded-md text-md text-[#686868] outline-orange-700"
+            >
+              <option value="1">March</option>
+              <option value="2">April</option>
+              <option value="3">May</option>
+              <option value="4">June</option>
+              <option value="5">September</option>
+              <option value="6">October</option>
+            </select>
+          </div>
+        </div>
+        <div className="border-l-2 border-[#a0a0a069] pl-3 flex flex-col gap-10 mb-12">
+          <div className="flex justify-between before:w-6 relative before:h-6 before:rounded-full before:bg-[#ff7575] before:absolute before:-left-[24px] pl-4">
+            <p>Meeting with John</p>
+            <span className="text-[#585858] text-sm">04:05 AM</span>
+          </div>
+          <div className="flex justify-between before:w-6 relative before:h-6 before:rounded-full before:bg-[#8cffd3] before:absolute before:-left-[24px] pl-4">
+            <p>Payment received of $385.90</p>
+            <span className="text-[#585858] text-sm">08:20 AM</span>
+          </div>
+          <div className="flex justify-between before:w-6 relative before:h-6 before:rounded-full before:bg-[#ebff78] before:absolute before:-left-[24px] pl-4">
+            <p>Project Meeting</p>
+            <span className="text-[#585858] text-sm">16:25 PM</span>
+          </div>
+          <div className="flex justify-between before:w-6 relative before:h-6 before:rounded-full before:bg-[#7595ff] before:absolute before:-left-[24px] pl-4">
+            <p>New Sale recorded #ML-3467</p>
+            <span className="text-[#585858] text-sm">18:30 PM</span>
+          </div>
+          <div className="flex justify-between before:w-6 relative before:h-6 before:rounded-full before:bg-[#c07dff] before:absolute before:-left-[24px] pl-4">
+            <p>Payment was made to Michael</p>
+            <span className="text-[#585858] text-sm">20:22 PM</span>
           </div>
         </div>
       </div>
