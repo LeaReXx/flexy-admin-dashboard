@@ -3,7 +3,7 @@ import logo from "../../assets/imgs/logo.svg";
 import discordLogo from "../../assets/imgs/brands/discord.png";
 import googleLogo from "../../assets/imgs/brands/google.png";
 import { Checkbox } from "@material-tailwind/react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Input } from "@material-tailwind/react";
 import { useAuth } from "../../context/AuthContext";
 export default function Register() {
@@ -11,7 +11,15 @@ export default function Register() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [userName, setUserName] = useState("");
-  const { registerUser, loading } = useAuth();
+  const navigate = useNavigate();
+  const { registerUser, loading, isLoggedIn } = useAuth();
+
+  useEffect(() => {
+    console.log(isLoggedIn);
+    if (isLoggedIn) {
+      navigate("/dashboard");
+    }
+  }, []);
 
   const createUser = () => registerUser(email, password, userName);
   return (

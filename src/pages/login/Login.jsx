@@ -1,18 +1,25 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import logo from "../../assets/imgs/logo.svg";
 import discordLogo from "../../assets/imgs/brands/discord.png";
 import googleLogo from "../../assets/imgs/brands/google.png";
 import { Checkbox } from "@material-tailwind/react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Input } from "@material-tailwind/react";
 import { useAuth } from "../../context/AuthContext";
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [remember, setRemember] = useState(false);
-  const { userInfos, loginUser,loading } = useAuth();
+  const { userInfos, loginUser, loading, isLoggedIn } = useAuth();
+  const navigate = useNavigate();
   const loginFormOnSubmit = () => loginUser(email, password);
-  
+
+  useEffect(() => {
+    console.log(isLoggedIn);
+    if (isLoggedIn) {
+      navigate("/dashboard");
+    }
+  }, []);
   return (
     <div className="bg-[#bad8f4] w-screen h-screen flex items-center justify-center">
       <div className="bg-[#fff] w-[90%] max-w-[450px] rounded-xl py-4 px-3 sm:px-8">
