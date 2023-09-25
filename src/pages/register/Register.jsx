@@ -93,7 +93,7 @@ export default function Register() {
                 disabled={loading}
                 minLength={8}
               />
-              <i 
+              <i
                 onClick={() => setShowPassword(!showPassword)}
                 className={`fa-regular ${
                   showPassword ? "fa-eye" : "fa-eye-slash"
@@ -141,7 +141,9 @@ export default function Register() {
           <div className="text-center mt-3">
             <h3 className="text-[#585858]">
               Already have an Account? {""}
-              <Link className="text-blue-500 font-normal">Sign In</Link>
+              <Link className="text-blue-500 font-normal" to="/login">
+                Sign In
+              </Link>
             </h3>
           </div>
         </div>
