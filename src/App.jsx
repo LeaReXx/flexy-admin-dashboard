@@ -10,6 +10,7 @@ import Dashboard from "./pages/dashboard/Dashboard";
 import Home from "./pages/home/Home";
 import { AuthProvider } from "./context/AuthContext";
 import "react-toastify/dist/ReactToastify.css";
+import DashboardMain from "./components/dashboard/home/DashboardMain";
 
 function App() {
   return (
@@ -22,7 +23,9 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route element={<PrivateRoutes />}>
-              <Route path="/dashboard" element={<Dashboard />} />
+              <Route path="/dashboard" element={<Dashboard />}>
+                <Route path="/dashboard" element={<DashboardMain />} />
+              </Route>
             </Route>
           </Routes>
         </ThemeProvider>

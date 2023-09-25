@@ -1,14 +1,13 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { Outlet, useNavigate, useParams } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
 import Navbar from "../../components/navbar/Navbar";
 import SideMenu from "../../components/side menu/SideMenu";
 import PageHeader from "../../components/page header/PageHeader";
-import FinancialReport from "../../components/dashboard/financial report/FinancialReport";
-import ProductSales from "../../components/dashboard/product sales/ProductSales";
+import DashboardMain from "../../components/dashboard/home/DashboardMain";
 
 export default function Dashboard() {
-  const { logOutUser, isLoggedIn, userInfos } = useAuth();
+  const { isLoggedIn } = useAuth();
   const [mobileSideMenu, setMobileSideMenu] = useState(false);
   const toggleMobileSideMenu = () => setMobileSideMenu(!mobileSideMenu);
   const navigate = useNavigate();
@@ -34,12 +33,7 @@ export default function Dashboard() {
                 { id: 2, title: "Analytical", src: "/dashboard" },
               ]}
             />
-            <div className="mt-4 flex flex-col gap-6">
-              <FinancialReport
-                name={userInfos.user_metadata?.name || "Unknown User"}
-              />
-              <ProductSales />
-            </div>
+            <Outlet />
           </div>
         </div>
       </main>

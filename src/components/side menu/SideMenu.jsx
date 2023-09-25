@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import logo from "../../assets/imgs/logo.svg";
 
 const SideMenu = ({ toggleMobileSideMenu, mobileSideMenu }) => {
@@ -26,14 +27,19 @@ const SideMenu = ({ toggleMobileSideMenu, mobileSideMenu }) => {
             </span>
             <div>
               <ul className="text-sm">
+                <Link to='/dashboard'>
                 <li className=" rounded-md py-3 bg-[#58CAD6] text-[#F6F6F6] my-1 cursor-pointer">
                   <i className="fa-regular fa-house fa-fw mx-2 text-[16px]"></i>
                   Dashboard
                 </li>
+                </Link>
+                <Link to='/dashboard/ecommerce'>
                 <li className="hover:bg-[#F6F6F6] hover:text-[#58cad6] rounded-md py-3 my-1 cursor-pointer">
                   <i className="fa-regular fa-cart-shopping fa-fw mx-2 text-[16px]"></i>
                   eCommerce
                 </li>
+
+                </Link>
                 <li className="hover:bg-[#F6F6F6] hover:text-[#58cad6] rounded-md py-3 my-1 cursor-pointer">
                   <i className="fa-regular fa-sparkles fa-fw mx-2 text-[16px]"></i>
                   Modern

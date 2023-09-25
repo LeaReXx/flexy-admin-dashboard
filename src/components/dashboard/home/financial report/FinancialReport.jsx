@@ -1,5 +1,5 @@
 import ReactApexChart from "react-apexcharts";
-import girlImage from "../../../assets/imgs/components image/girl_image.png";
+import girlImage from "../../../../assets/imgs/components image/girl_image.png";
 const FinancialReport = ({ name }) => {
   const state = {
     series: [

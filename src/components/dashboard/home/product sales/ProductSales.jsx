@@ -1,10 +1,10 @@
 import ReactApexChart from "react-apexcharts";
-import userImage1 from "../../../assets/imgs/components image/1-32ddcd87.jpg";
-import userImage2 from "../../../assets/imgs/components image/2-1c16a104.jpg";
-import userImage3 from "../../../assets/imgs/components image/3-0594bd0b.jpg";
-import userImage4 from "../../../assets/imgs/components image/4-76ce6c0c.jpg";
-import userImage5 from "../../../assets/imgs/components image/5-d39d5aaf.jpg";
-import postImage from "../../../assets/imgs/components image/blog-bg-2x-7983955c.jpg";
+import userImage1 from "../../../../assets/imgs/components image/1-32ddcd87.jpg";
+import userImage2 from "../../../../assets/imgs/components image/2-1c16a104.jpg";
+import userImage3 from "../../../../assets/imgs/components image/3-0594bd0b.jpg";
+import userImage4 from "../../../../assets/imgs/components image/4-76ce6c0c.jpg";
+import userImage5 from "../../../../assets/imgs/components image/5-d39d5aaf.jpg";
+import postImage from "../../../../assets/imgs/components image/blog-bg-2x-7983955c.jpg";
 const ProductSales = () => {
   const donut = {
     series: [44, 55, 41, 25],
