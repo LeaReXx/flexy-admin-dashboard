@@ -58,16 +58,12 @@ export const AuthProvider = ({ children }) => {
         },
       },
     });
-    console.log(data, error);
     if (data) {
-      if (data.user?.identities) {
+      if (data.user?.identities.length) {
         addNotifToDom("Registration was successful", "success");
-        setIsLoggedIn(true);
+        navigate("/login");
       } else {
-        addNotifToDom(
-          "this email address has already been registered",
-          "warning"
-        );
+        addNotifToDom("this email already been registered", "warning");
       }
     } else {
       addNotifToDom("something went wrong, please try again", "error");
