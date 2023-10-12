@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import logo from "../../assets/imgs/logo.svg";
 import discordLogo from "../../assets/imgs/brands/discord.png";
 import googleLogo from "../../assets/imgs/brands/google.png";
@@ -7,15 +7,14 @@ import { Link, useNavigate } from "react-router-dom";
 import { Input } from "@material-tailwind/react";
 import { useAuth } from "../../context/AuthContext";
 export default function Login() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("sapolec929@czilou.com");
+  const [password, setPassword] = useState("123456789");
   const [remember, setRemember] = useState(false);
   const { userInfos, loginUser, loading, isLoggedIn } = useAuth();
   const navigate = useNavigate();
   const loginFormOnSubmit = () => loginUser(email, password);
 
   useEffect(() => {
-    console.log(isLoggedIn);
     if (isLoggedIn) {
       navigate("/dashboard");
     }
@@ -75,6 +74,7 @@ export default function Login() {
           <Input
             type="email"
             label="EMAIL ADDRESS"
+            defaultValue={email}
             onChange={(e) => setEmail(e.target.value)}
             className="border py-2 px-3 rounded-lg"
             required
@@ -83,6 +83,7 @@ export default function Login() {
           <Input
             type="password"
             label="PASSWORD"
+            defaultValue={password}
             onChange={(e) => setPassword(e.target.value)}
             className="border py-2 px-3 rounded-lg"
             required
